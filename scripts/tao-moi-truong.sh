@@ -3,7 +3,8 @@ venv_parent=$( realpath $DIR/.. )
 venv_name=.venv
 venv_path=$venv_parent/$venv_name
 [[ ! -d $venv_path ]] && py -m venv $venv_path
-source $venv_path/Scripts/activate
+cd $venv_path
+./Scripts/activate
 which python3
 
 py -m pip install --ignore-installed -r requirements.txt
